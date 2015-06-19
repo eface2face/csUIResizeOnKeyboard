@@ -59,10 +59,9 @@ limitations under the License.
     CGFloat keyboardHeight = [sizeInfo CGRectValue].size.height;
 
     CGRect bounds = [[UIScreen mainScreen] bounds];
-    bounds.size.height -= keyboardHeight;
+    bounds.size.height -= keyboardHeight + 20;
     // The height is in points, not in pixels, so it's the same for all devices
     bounds.origin.y = 20;
-    bounds.size.height -= keyboardHeight + 20;
     self.webView.frame = bounds;
 }
 
