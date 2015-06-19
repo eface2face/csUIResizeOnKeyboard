@@ -60,6 +60,9 @@ limitations under the License.
 
     CGRect bounds = [[UIScreen mainScreen] bounds];
     bounds.size.height -= keyboardHeight;
+    // The height is in points, not in pixels, so it's the same for all devices
+    bounds.origin.y = 20;
+    bounds.size.height -= keyboardHeight + 20;
     self.webView.frame = bounds;
 }
 
@@ -81,6 +84,8 @@ limitations under the License.
 - (void)resetViewSize
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    screenBounds.origin.y = 20;
+    screenBounds.size.height -= 20;
     self.webView.frame = screenBounds;
 }
 
